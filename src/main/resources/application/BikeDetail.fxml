@@ -14,25 +14,31 @@
       <Button mnemonicParsing="false" onAction="#returnToPreviousScene" text="Back" BorderPane.alignment="TOP_LEFT">
          <BorderPane.margin>
             <Insets left="8.0" top="8.0" />
-         </BorderPane.margin></Button>
+         </BorderPane.margin>
+         <font>
+            <Font name="Courier New" size="12.0" />
+         </font></Button>
    </top>
    <right>
       <VBox prefHeight="374.0" prefWidth="476.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="62.0" prefWidth="186.0" text="Bike Detail">
+            <Label prefHeight="62.0" prefWidth="186.0" text="Bike Detail" textFill="#126f19" >
                <font>
-                  <Font size="27.0" />
+                  <Font name="Courier New Bold" size="27.0" />
                </font></Label>
             <TableView fx:id="tblBikeDetail" prefHeight="327.0" prefWidth="385.0">
-              <columns>
-                 <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
-                 <TableColumn fx:id="depositColumn" prefWidth="75.0" text="Deposit" />
-              </columns>
+               <columns>
+                  <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="depositColumn" prefWidth="75.0" text="Deposit" />
+               </columns>
             </TableView>
             <Button mnemonicParsing="false" onAction="#rentBike" text="Rent Bike">
                <VBox.margin>
                   <Insets bottom="8.0" top="8.0" />
-               </VBox.margin></Button>
+               </VBox.margin>
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font></Button>
          </children>
       </VBox>
    </right>

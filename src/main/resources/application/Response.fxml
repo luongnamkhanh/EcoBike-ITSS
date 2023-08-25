@@ -8,31 +8,31 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ResponseController">
-   <top>
-      <Label alignment="CENTER" prefHeight="66.0" prefWidth="160.0" text="Response" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="27.0" />
-         </font></Label>
-   </top>
-   <center>
-      <TableView fx:id="tblResponse" prefHeight="195.0" prefWidth="434.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="errorCode" prefWidth="75.0" text="Error code" />
-          <TableColumn fx:id="cardCode" prefWidth="75.0" text="Card code" />
-            <TableColumn fx:id="owner" prefWidth="75.0" text="Owner" />
-            <TableColumn fx:id="expiratedDate" prefWidth="117.60005187988281" text="Expired date" />
-            <TableColumn fx:id="transactionId" prefWidth="111.20001220703125" text="Transaction ID" />
-            <TableColumn fx:id="transactionContent" minWidth="0.0" prefWidth="128.00006103515625" text="Transaction content" />
-            <TableColumn fx:id="amount" prefWidth="75.19989013671875" text="Amount" />
-            <TableColumn fx:id="createdAt" prefWidth="119.99993896484375" text="Created at" />
-        </columns>
-      </TableView>
-   </center>
-   <bottom>
-      <Button mnemonicParsing="false" onAction="#confirm" text="OK" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="8.0" top="8.0" />
-         </BorderPane.margin></Button>
-   </bottom>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ResponseController">
+    <top>
+        <Label prefHeight="65.0" prefWidth="133.0" text="Response" textFill="#126f19" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Courier New Bold" size="27.0" />
+            </font></Label>
+    </top>
+    <center>
+        <TableView fx:id="tblResponse" prefHeight="294.0" prefWidth="589.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="errorCode" prefWidth="64.00000154972076" text="Error code" />
+                <TableColumn fx:id="cardCode" prefWidth="76.79998016357422" text="Card code" />
+                <TableColumn fx:id="owner" prefWidth="70.4000244140625" text="Owner" />
+                <TableColumn fx:id="expiratedDate" prefWidth="107.20001220703125" text="Expired date" />
+                <TableColumn fx:id="transactionId" prefWidth="104.0" text="Transaction ID" />
+                <TableColumn fx:id="transactionContent" prefWidth="125.60000610351562" text="Transaction content" />
+                <TableColumn fx:id="amount" minWidth="9.0" prefWidth="82.4000244140625" text="Amount" />
+                <TableColumn fx:id="createdAt" prefWidth="135.199951171875" text="Created at" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <Button mnemonicParsing="false" onAction="#confirm" text="OK" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="8.0" top="8.0" />
+            </BorderPane.margin></Button>
+    </bottom>
 </BorderPane>

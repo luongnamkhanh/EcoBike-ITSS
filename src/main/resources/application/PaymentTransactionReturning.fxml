@@ -17,10 +17,13 @@
                <HBox.margin>
                   <Insets left="8.0" top="8.0" />
                </HBox.margin>
-            </Button>
-            <Label alignment="CENTER" prefHeight="94.0" prefWidth="506.0" text="Payment Transaction">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Courier New" size="12.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" prefHeight="94.0" prefWidth="506.0" text="PAYMENT TRANSACTION" textFill="#126f19">
+               <font>
+                  <Font name="Courier New Bold" size="27.0" />
                </font>
             </Label>
          </children>
@@ -28,10 +31,10 @@
    </top>
    <center>
       <TableView fx:id="tblTransaction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="contentColumn" prefWidth="75.0" text="Content" />
-          <TableColumn fx:id="depositColumn" prefWidth="75.0" text="Amount" />
-        </columns>
+         <columns>
+            <TableColumn fx:id="contentColumn" prefWidth="75.0" text="Content" />
+            <TableColumn fx:id="depositColumn" prefWidth="75.0" text="Amount" />
+         </columns>
       </TableView>
    </center>
    <bottom>
@@ -39,6 +42,9 @@
          <BorderPane.margin>
             <Insets bottom="8.0" top="8.0" />
          </BorderPane.margin>
+         <font>
+            <Font name="Courier New" size="12.0" />
+         </font>
       </Button>
    </bottom>
 </BorderPane>

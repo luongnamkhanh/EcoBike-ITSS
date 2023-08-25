@@ -12,28 +12,49 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.BikeDetailWhileRentingController">
    <right>
-      <VBox prefHeight="400.0" prefWidth="298.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="400.0" prefWidth="297.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="68.0" prefWidth="186.0" text="Bike Detail">
+            <Label text="Bike Detail" textFill="#126f19">
                <font>
-                  <Font size="27.0" />
-               </font></Label>
-            <TextArea fx:id="bikeInfoWhileRenting" prefHeight="200.0" prefWidth="316.0">
+                  <Font name="Courier New Bold" size="26.0" />
+               </font>
                <VBox.margin>
-                  <Insets right="8.0" />
-               </VBox.margin></TextArea>
+                  <Insets top="20.0" />
+               </VBox.margin></Label>
+            <TextArea fx:id="bikeInfoWhileRenting" prefHeight="200.0" prefWidth="272.0">
+               <VBox.margin>
+                  <Insets right="8.0" top="8.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Cambria" size="12.0" />
+               </font></TextArea>
             <Button mnemonicParsing="false" onAction="#returnBike" text="Return Bike">
                <VBox.margin>
                   <Insets top="8.0" />
-               </VBox.margin></Button>
+               </VBox.margin>
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font></Button>
             <Label />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rent Time" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rent Time">
+               <font>
+                  <Font name="Cambria" size="13.0" />
+               </font></Text>
             <Label />
-            <Text fx:id="timer" strokeType="OUTSIDE" strokeWidth="0.0" text="Clock" wrappingWidth="84.07501220703125" />
+            <Text fx:id="timer" strokeType="OUTSIDE" strokeWidth="0.0" text="Clock" wrappingWidth="84.07501220703125">
+               <font>
+                  <Font name="Cambria" size="13.0" />
+               </font></Text>
          </children>
+         <BorderPane.margin>
+            <Insets right="8.0" />
+         </BorderPane.margin>
       </VBox>
    </right>
-   <center>
-      <ImageView fx:id="bikeImg" fitHeight="198.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
-   </center>
+   <left>
+      <ImageView fx:id="bikeImg" fitHeight="198.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="100.0" left="20.0" />
+         </BorderPane.margin></ImageView>
+   </left>
 </BorderPane>

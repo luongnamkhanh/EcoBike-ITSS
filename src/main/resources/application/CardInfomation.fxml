@@ -21,7 +21,10 @@
                      </HBox.margin>
                      <padding>
                         <Insets left="25.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
                   <TextField fx:id="cardHolderNameField" alignment="CENTER" />
                </children>
             </HBox>
@@ -31,6 +34,9 @@
                      <padding>
                         <Insets left="25.0" />
                      </padding>
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
                   </Label>
                   <TextField fx:id="cardNumberField" alignment="CENTER" />
                </children>
@@ -44,6 +50,9 @@
                      <padding>
                         <Insets left="25.0" />
                      </padding>
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
                   </Label>
                   <TextField fx:id="issuingBankField" alignment="CENTER" />
                </children>
@@ -57,6 +66,9 @@
                      <padding>
                         <Insets left="25.0" />
                      </padding>
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
                   </Label>
                   <TextField fx:id="expirationDateField" alignment="CENTER" />
                </children>
@@ -70,6 +82,9 @@
                      <padding>
                         <Insets left="25.0" />
                      </padding>
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
                   </Label>
                   <TextField fx:id="securityCodeField" alignment="CENTER" />
                </children>
@@ -78,13 +93,22 @@
                </VBox.margin>
             </HBox>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
       </VBox>
    </center>
    <bottom>
       <Button mnemonicParsing="false" onAction="#submit" text="Submit" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="8.0" />
-         </BorderPane.margin></Button>
+         </BorderPane.margin>
+         <font>
+            <Font name="Courier New" size="12.0" />
+         </font></Button>
    </bottom>
    <top>
       <HBox prefHeight="75.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
@@ -92,10 +116,13 @@
             <Button mnemonicParsing="false" onAction="#returnToPreviousScene" text="Back">
                <HBox.margin>
                   <Insets left="8.0" top="8.0" />
-               </HBox.margin></Button>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="81.0" prefWidth="512.0" text="Card Information" textAlignment="CENTER">
+               </HBox.margin>
                <font>
-                  <Font size="27.0" />
+                  <Font name="Courier New" size="12.0" />
+               </font></Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="81.0" prefWidth="512.0" text="CARD INFORMATION" textAlignment="CENTER" textFill="#126f19">
+               <font>
+                  <Font name="Courier New Bold" size="27.0" />
                </font>
             </Label>
          </children>

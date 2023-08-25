@@ -41,6 +41,13 @@ public class BikeController {
         return dao.bikeCodeExists(code);
     }
 
+    public boolean compareCodes(String enteredCode, Bike bike) {
+        return enteredCode.equals(bike.getBikeCode());
+    }
+
+    public String fetchBikeCode(Bike bike) {
+        return bike.getBikeCode();
+    }
     public void rentBike(Bike bike) {
         try {
             bike.setRentedTime(LocalDateTime.now());
