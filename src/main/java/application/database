@@ -1,0 +1,64 @@
+CREATE TABLE docks (
+    dock_id SERIAL PRIMARY KEY,    
+    name VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    dock_size INTEGER NOT NULL DEFAULT 9
+);
+
+CREATE TABLE bikes (
+    bike_id SERIAL PRIMARY KEY,              
+    bikeType VARCHAR(50) NOT NULL,
+    plate VARCHAR(10) UNIQUE,
+    price REAL,
+    rentingTime REAL NOT NULL DEFAULT 0,  
+    batteryPercentage REAL NOT NULL DEFAULT 100,
+    timeRemain REAL NOT NULL DEFAULT 120,
+    dockId INTEGER REFERENCES docks(dock_id),       
+    bikeCode VARCHAR(6) UNIQUE,
+    brand VARCHAR(255),
+    rentedTime TIMESTAMP WITHOUT TIME ZONE,
+    status BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE OR REPLACE FUNCTION set_bike_price()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.bikeType = 'EBike' THEN  
+        NEW.price := 700000;
+    ELSIF NEW.bikeType = 'TwinBike' THEN
+        NEW.price := 550000;
+    ELSIF NEW.bikeType = 'StandardBike' THEN
+        NEW.price := 400000;
+    END IF;
+    NEW.bikeCode := LPAD(FLOOR(RANDOM() * 999999)::TEXT, 6, '0');
+    NEW.plate := 'BIKE-' || LPAD(FLOOR(RANDOM() * 9999)::TEXT, 4, '0');
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_price_before_insert
+BEFORE INSERT ON bikes
+FOR EACH ROW 
+EXECUTE FUNCTION set_bike_price();
+
+INSERT INTO docks (name, address) VALUES
+('Dock1', '123 Street'),
+('Dock2', '456 Street'),
+('Dock3', '789 Street');
+
+INSERT INTO bikes (bikeType, dockId, brand) VALUES
+('StandardBike', 1, 'BrandX'),
+('StandardBike', 1, 'BrandX'),
+('EBike', 1, 'BrandY'),
+('TwinBike', 1, 'BrandZ'),
+('StandardBike', 2, 'BrandX'),
+('EBike', 2, 'BrandY'),
+('TwinBike', 2, 'BrandZ'),
+('StandardBike', 3, 'BrandA'),
+('StandardBike', 3, 'BrandA'),
+('TwinBike', 3, 'BrandB'),
+('TwinBike', 3, 'BrandC'),
+('EBike', 3, 'BrandB');
+
+select * from bikes;
+
